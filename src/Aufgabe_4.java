@@ -1,17 +1,34 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aufgabe_1
+public class Aufgabe_4
 {
-
     public static void main(String[] args)
     {
-        File test = new File("/Users/larissablachfelder/documents/uebung_fur_SW_uebung8/test.txt"); //Laptop auf Deutsch aber Betriebssystem Englisch
+        String ordnerPath = "/Users/larissablachfelder/documents/uebung_fur_SW_uebung8";
 
-        // File Reader zur gleichen zeit lesen zugriff auf die datei
-        //solange die Files offen sind greife ich darauf zu und brauche speicher, wenn ich es schließe wird er geschlossen und der speicher wird kleiner;
-        //außerdem können erst dann andere wieder auf diese Datei zugreifen
+        File f = new File(ordnerPath);
+
+        for(String item : f.list())
+        {
+            System.out.println(ordnerPath+ "/"+item);
+            readFile(ordnerPath+ "/"+item);
+
+
+
+
+
+        }
+    }
+
+    public static void readFile(String filepath)
+    {
+        File test = new File(filepath); //aufgabe 1 nur hier verändert
+
 
         BufferedReader br = null;
 
@@ -58,5 +75,5 @@ public class Aufgabe_1
         }
 
     }
-}
+    }
 
